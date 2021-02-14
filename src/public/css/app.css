@@ -1,4 +1,4 @@
-body {
+body.bg-gradient {
   background: #28a8b1;
   background: #24c6dc;
   background: -webkit-linear-gradient(to bottom, #28a8b1, #18696e);
@@ -33,6 +33,14 @@ body {
   color: #fff;
 }
 
+.thead-green {
+  background-color: #28a8b1;
+  color: #fff;
+}
+
+.th-hovered:hover {
+  cursor: pointer;
+}
 @media screen and (min-height: 1000px) {
   body {
     min-height: 100vh;

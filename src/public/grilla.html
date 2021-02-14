@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grilla de Jugadores</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="es">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Interfaz de Inicio de Sesión</title>
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/materia/bootstrap.min.css"
+          integrity="sha384-B4morbeopVCSpzeC1c4nyV0d0cqvlSAfyXVfrPJa25im5p+yEN/YmhlgQP/OyMZD"
+          crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="./css/app.css" />
+      </head>
+      <body>
+        <div id="app">
+          <main class="container pt-3">
+            <div class="row">
+              <div class="col-12 mb-3">
+                <p class="text-green h2">Lista de Jugadores</p>
+                <input
+                  class="form-control w-50"
+                  type="text"
+                  placeholder="Search"
+                />
+              </div>
+              <div class="col-12 mb-3">
+                <div class="card shadow-sm">
+                  <table class="table table-reponsive table-hover rounded">
+                    <thead class="thead-green">
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Primer Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Altura Pulgadas</th>
+                        <th scope="col">Altura Pies</th>
+                        <th scope="col">Peso</th>
+                        <th scope="col">Posición</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="th-hovered">
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div
+                class="col-12 d-flex d-flex align-items-center justify-content-between"
+              >
+                <div class="select-page d-flex align-items-center w-25">
+                  <label
+                    class="h6 mr-2 text-secondary d-block w-50"
+                    for="select"
+                    >Items for page:</label
+                  >
+                  <select name="#" id="select" class="form-control w-50">
+                    <option value="25" selected>25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+                <div class="paginate d-flex align-items-center">
+                  <p class="h6 text-secondary mr-3">Total page: 10</p>
+                  <p class="h6 text-secondary mr-3">Total player: 100</p>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="./js/app.js"></script>
+      </body>
+    </html>
+  </body>
+</html>
