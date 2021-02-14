@@ -75,6 +75,32 @@ body.bg-gradient {
   grid-template-rows: repeat(1, 40px);
 }
 
+.player-item {
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+.player-item:hover {
+  background-color: #dbdbdb;
+}
+
+.player-details {
+  position: absolute;
+  width: 90%;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  transition: all ease 0.3s;
+}
+
+.grid-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+
 @media screen and (min-height: 1000px) {
   body {
     min-height: 100vh;

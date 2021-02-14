@@ -50,7 +50,8 @@
                     <div
                       :key="i"
                       v-for="(player,i) of players"
-                      class="item grid-body"
+                      @click="(getSpecificTeam(i, player.team.id))"
+                      class="player-item grid-body"
                     >
                       <p>
                         <span
@@ -68,6 +69,22 @@
                         {{player.weight_pounds ? player.weight_pounds : '-'}}
                       </p>
                       <p>{{player.positon ? player.positon : '-'}}</p>
+
+                      <div
+                        v-show="player.showDetail"
+                        class="player-details mx-auto card shadow"
+                      >
+                        <div class="card-header grid-details text-center p-2">
+                          <p>Nombre Equipo</p>
+                          <p>Conferencia</p>
+                          <p>Abreviatura</p>
+                        </div>
+                        <div class="card-body grid-details text-center p-2">
+                          <p>{{teamShow.full_name}}</p>
+                          <p>{{teamShow.conference}}</p>
+                          <p>{{teamShow.abbreviation}}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
