@@ -11,6 +11,48 @@ const vue = new Vue({
     keyPlayer: '',
   },
   methods: {
+    orderColumn(tab) {
+      if (tab === 'ID') {
+        this.players.sort(function (a, b) {
+          return a.id - b.id
+        })
+        return
+      }
+      if (tab === 'name') {
+        this.players.sort(function (a, b) {
+          return a.first_name - b.first_name
+        })
+        return
+      }
+
+      if (tab === 'last_name') {
+        this.players.sort(function (a, b) {
+          return a.last_name - b.last_name
+        })
+        return
+      }
+
+      if (tab === 'feet') {
+        this.players.sort(function (a, b) {
+          return a.height_feet - b.height_feet
+        })
+        return
+      }
+
+      if (tab === 'feet') {
+        this.players.sort(function (a, b) {
+          return a.height_inches - b.height_inches
+        })
+        return
+      }
+      if (tab === 'pounds') {
+        this.players.sort(function (a, b) {
+          return a.weight_pounds - b.weight_pounds
+        })
+        return
+      }
+    },
+
     async getAllPlayerApi() {
       let res = await axios.get(API + 'players', {
         headers,

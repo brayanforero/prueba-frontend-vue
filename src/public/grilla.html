@@ -39,12 +39,12 @@
                 <div class="card shadow-sm">
                   <div class="card-header bg-green grid-header text-center p-2">
                     <p>Detalle</p>
-                    <p>ID</p>
-                    <p>Primer Nombre</p>
-                    <p>Apellido</p>
-                    <p>Altura Pulgada</p>
-                    <p>Altura Pies</p>
-                    <p>Peso</p>
+                    <p @click="(orderColumn('ID'))">ID</p>
+                    <p @click="(orderColumn('name'))">Primer Nombre</p>
+                    <p @click="(orderColumn('last_name'))">Apellido</p>
+                    <p @click="(orderColumn('feet'))">Altura Pulgada</p>
+                    <p @click="(orderColumn('hinches'))">Altura Pies</p>
+                    <p @click="(orderColumn('pounds'))">Peso</p>
                     <p>Posicion</p>
                   </div>
                   <div class="card-body text-center p-2">
