@@ -8,6 +8,7 @@ const vue = new Vue({
     metas: {},
     teamShow: [],
     oldItemSelected: null,
+    keyPlayer: '',
   },
   methods: {
     async getAllPlayerApi() {
@@ -35,6 +36,17 @@ const vue = new Vue({
       })
 
       this.teamShow = res.data
+    },
+    async searchPlayer(e) {
+      let res = await axios.get(API + 'players', {
+        headers,
+        params: {
+          search: e.target.value,
+        },
+      })
+
+      this.players = res.data.data
+      this.metas = res.data.meta
     },
   },
   created() {

@@ -29,6 +29,7 @@
               <div class="col-12 mb-3">
                 <p class="text-green h2">Lista de Jugadores</p>
                 <input
+                  @keyup="searchPlayer($event)"
                   class="form-control w-50"
                   type="text"
                   placeholder="Search"
