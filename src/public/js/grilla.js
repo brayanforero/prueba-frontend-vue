@@ -53,9 +53,10 @@ const vue = new Vue({
       }
     },
 
-    async getAllPlayerApi() {
+    async getAllPlayerApi(params = null) {
       let res = await axios.get(API + 'players', {
         headers,
+        params,
       })
       let { data } = res.data
 
@@ -89,6 +90,13 @@ const vue = new Vue({
 
       this.players = res.data.data
       this.metas = res.data.meta
+    },
+    paginate(e) {
+      const params = {
+        per_page: e.target.value,
+      }
+
+      this.getAllPlayerApi(params)
     },
   },
   created() {
