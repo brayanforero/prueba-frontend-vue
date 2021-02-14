@@ -101,6 +101,10 @@ body.bg-gradient {
   align-items: center;
 }
 
+.tabs-body {
+  min-height: 30rem;
+}
+
 @media screen and (min-height: 1000px) {
   body {
     min-height: 100vh;

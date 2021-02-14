@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interfaz de Inicio de Sesión</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/materia/bootstrap.min.css"
+      integrity="sha384-B4morbeopVCSpzeC1c4nyV0d0cqvlSAfyXVfrPJa25im5p+yEN/YmhlgQP/OyMZD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/app.css" />
+  </head>
+  <body>
+    <div id="app">
+      <main class="container pt-3">
+        <div class="row">
+          <div class="col-10 mx-auto">
+            <div class="card">
+              <div class="card-header bg-light">
+                <ul class="nav nav-tabs">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      :class="{'active': current_step == 1 ,'disabled': current_step > 1}"
+                      href="#"
+                      >Paso 1.</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      :class="{'active': current_step == 2,'disabled': current_step < 2 || current_step > 2}"
+                      href="#"
+                      >Paso.2</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      :class="{'active': current_step == 3, 'disabled': current_step < 3}"
+                      href="#"
+                      >Paso.3</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body tabs-body">
+                <form action="#">
+                  <span v-show="labelErr" class="text-danger">
+                    {{labelErr}}
+                  </span>
+                  <!-- STEP1 -->
+                  <div v-show="current_step == 1" id="form-step__1">
+                    <div
+                      class="form-group d-flex justity-content-between align-items-center"
+                    >
+                      <label class="h6 text-secondary m-0 mr-3" for="name"
+                        >First Name</label
+                      >
+                      <input
+                        required
+                        class="form-control"
+                        autofocus
+                        autocomplete="off"
+                        type="text"
+                        id="name"
+                        placeholder="John"
+                        @keyup="validNames($event)"
+                      />
+                    </div>
+                    <div
+                      class="form-group d-flex justity-content-between align-items-center"
+                    >
+                      <label class="h6 text-secondary m-0 mr-3" for="last_name"
+                        >Last Name</label
+                      >
+                      <input
+                        required
+                        class="form-control"
+                        autocomplete="off"
+                        type="text"
+                        id="last_name"
+                        placeholder="Doe"
+                        @keyup="validLastNames($event)"
+                      />
+                    </div>
+                    <div
+                      class="form-group d-flex justity-content-between align-items-center"
+                    >
+                      <label class="h6 text-secondary m-0 mr-3" for="feet"
+                        >Height Feet</label
+                      >
+                      <input
+                        class="form-control"
+                        autocomplete="off"
+                        type="text"
+                        id="feet"
+                        placeholder="2"
+                        @keyup="validHeight($event)"
+                      />
+                    </div>
+                    <div
+                      class="form-group d-flex justity-content-between align-items-center"
+                    >
+                      <label class="h6 text-secondary m-0 mr-3" for="inches"
+                        >Height Inches</label
+                      >
+                      <input
+                        class="form-control"
+                        autocomplete="off"
+                        type="text"
+                        id="inches"
+                        placeholder="2"
+                        @keyup="validHeight($event)"
+                      />
+                    </div>
+                    <div
+                      class="form-group d-flex justity-content-between align-items-center"
+                    >
+                      <label class="h6 text-secondary m-0 mr-3" for="weight"
+                        >Weight Pounds</label
+                      >
+                      <input
+                        class="form-control"
+                        autocomplete="off"
+                        type="text"
+                        id="weight"
+                        placeholder="60"
+                        @keyup="validHeight($event)"
+                      />
+                    </div>
+                    <div
+                      class="form-group d-flex justity-content-between align-items-center"
+                    >
+                      <label class="h6 text-secondary m-0 mr-3" for="position"
+                        >Position</label
+                      >
+                      <select
+                        required
+                        class="form-control"
+                        name="position"
+                        id="position"
+                        v-model="stepOne.position"
+                      >
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                      </select>
+                    </div>
+                    <div
+                      class="form-group d-flex justity-content-between align-items-center"
+                    >
+                      <label class="h6 text-secondary m-0 mr-3" for="date_birth"
+                        >Date Of Birth</label
+                      >
+                      <input
+                        required
+                        class="form-control"
+                        type="date"
+                        id="date_birth"
+                        placeholder="John"
+                        v-model="stepOne.date_birth"
+                      />
+                    </div>
+                    <div
+                      class="form-group d-flex justity-content-between align-items-center"
+                    >
+                      <label class="h6 text-secondary m-0 mr-3" for="name"
+                        >Age</label
+                      >
+                      <input
+                        class="form-control"
+                        disabled
+                        autocomplete="off"
+                        type="text"
+                        id="name"
+                        :value="age"
+                      />
+                    </div>
+                  </div>
+                  <!-- STERP2 -->
+                  <div v-show="current_step == 2" id="form-step__1">
+                    <div
+                      class="form-group d-flex justity-content-between align-items-center"
+                    >
+                      <label class="h6 text-secondary m-0 mr-3" for="name"
+                        >abbreviation</label
+                      >
+                      <input
+                        required
+                        class="form-control"
+                        autofocus
+                        autocomplete="off"
+                        type="text"
+                        id="name"
+                        placeholder="John"
+                        @keyup="validAbb($event)"
+                      />
+                    </div>
+                    <div
+                      class="form-group d-flex justity-content-between align-items-center"
+                    >
+                      <label class="h6 text-secondary m-0 mr-3" for="conference"
+                        >Conference</label
+                      >
+                      <select class="form-control" name="conference"></select>
+                    </div>
+                  </div>
+                  <div v-show="current_step == 3" id="form-step__1">
+                    <p class="display-1">3</p>
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer">
+                <button
+                  v-show="this.stepOne.name && this.stepOne.last_name && this.stepOne.position"
+                  @click="current_step++"
+                  class="btn btn-green"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./js/register.js"></script>
+  </body>
+</html>
