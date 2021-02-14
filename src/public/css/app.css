@@ -33,7 +33,7 @@ body.bg-gradient {
   color: #fff;
 }
 
-.thead-green {
+.bg-green {
   background-color: #28a8b1;
   color: #fff;
 }
@@ -41,6 +41,40 @@ body.bg-gradient {
 .th-hovered:hover {
   cursor: pointer;
 }
+
+.circle,
+.circle-a,
+.circle-b,
+.circle-c {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  margin: 0 auto;
+  background-color: #9c9595;
+}
+
+.circle-a {
+  background-color: #1cb374;
+}
+.circle-b {
+  background-color: #ceae22;
+}
+.circle-c {
+  background-color: #ac1818;
+}
+
+.grid-header,
+.grid-body {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  align-items: center;
+}
+
+.grid-header {
+  grid-template-rows: repeat(1, 40px);
+}
+
 @media screen and (min-height: 1000px) {
   body {
     min-height: 100vh;

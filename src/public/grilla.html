@@ -36,30 +36,40 @@
               </div>
               <div class="col-12 mb-3">
                 <div class="card shadow-sm">
-                  <table class="table table-reponsive table-hover rounded">
-                    <thead class="thead-green">
-                      <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Primer Nombre</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Altura Pulgadas</th>
-                        <th scope="col">Altura Pies</th>
-                        <th scope="col">Peso</th>
-                        <th scope="col">Posición</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr class="th-hovered">
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <div class="card-header bg-green grid-header text-center p-2">
+                    <p>Detalle</p>
+                    <p>ID</p>
+                    <p>Primer Nombre</p>
+                    <p>Apellido</p>
+                    <p>Altura Pulgada</p>
+                    <p>Altura Pies</p>
+                    <p>Peso</p>
+                    <p>Posicion</p>
+                  </div>
+                  <div class="card-body text-center p-2">
+                    <div
+                      :key="i"
+                      v-for="(player,i) of players"
+                      class="item grid-body"
+                    >
+                      <p>
+                        <span
+                          :class="{'circle': player.position == 'C', 'circle-a': player.position == 'A', 'circle-c': !player.position,'circle-b': player.position != 'A' || player.position != 'C'}"
+                        ></span>
+                      </p>
+                      <p>{{player.id}}</p>
+                      <p>{{player.first_name ? player.first_name : '-'}}</p>
+                      <p>{{player.last_name ? player.last_name : '-'}}</p>
+                      <p>{{player.height_feet ? player.height_feet : '-'}}</p>
+                      <p>
+                        {{player.heigth_inches ? player.heigth_inches : '-'}}
+                      </p>
+                      <p>
+                        {{player.weight_pounds ? player.weight_pounds : '-'}}
+                      </p>
+                      <p>{{player.positon ? player.positon : '-'}}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div
@@ -78,15 +88,24 @@
                   </select>
                 </div>
                 <div class="paginate d-flex align-items-center">
-                  <p class="h6 text-secondary mr-3">Total page: 10</p>
-                  <p class="h6 text-secondary mr-3">Total player: 100</p>
+                  <p class="h6 text-secondary mr-3">
+                    Total page: {{metas.total_pages}}
+                  </p>
+                  <p class="h6 text-secondary mr-3">
+                    Total player: {{metas.total_count}}
+                  </p>
                 </div>
               </div>
             </div>
           </main>
         </div>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+          integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+          crossorigin="anonymous"
+        ></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-        <script src="./js/app.js"></script>
+        <script src="./js/grilla.js"></script>
       </body>
     </html>
   </body>
