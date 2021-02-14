@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interfaz de Inicio de Sesión</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/materia/bootstrap.min.css"
+      integrity="sha384-B4morbeopVCSpzeC1c4nyV0d0cqvlSAfyXVfrPJa25im5p+yEN/YmhlgQP/OyMZD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/app.css" />
+  </head>
+  <body>
+    <div id="app">
+      <section class="container pt-3 h-100">
+        <div class="panel-login mx-auto">
+          <div
+            class="panel-login__left d-flex align-items-center justify-content-center"
+          >
+            <p class="m-0 display-4 text-green">ARC</p>
+          </div>
+          <div class="panel-login__right px-3">
+            <form @submit.prevent="sendData" action="#">
+              <div class="form-head py-5 mb-3">
+                <p class="m-0 h3 text-secondary">SIGN IN</p>
+                <h2 class="h1 text-green">Welcome!</h2>
+              </div>
+              <div class="form-body">
+                <div class="mb-3">
+                  <label class="text-secondary h5 w-100">
+                    User
+                    <input
+                      required
+                      class="form-control"
+                      type="text"
+                      placeholder="johndoe"
+                      v-model="user"
+                      @keyup="checkFieldUser($event)"
+                      @focus="checkFieldUser($event)"
+                    />
+                  </label>
+                  <span v-show="labelUser" class="text-danger">
+                    {{labelUser}}
+                  </span>
+                </div>
+                <div class="mb-4">
+                  <label class="text-secondary h5 w-100">
+                    Password
+                    <input
+                      required
+                      class="form-control"
+                      type="password"
+                      v-model="password"
+                      placeholder="*********"
+                      @keyup="checkFieldPassword($event)"
+                      @focus="checkFieldPassword($event)"
+                    />
+                  </label>
+                  <span v-show="labelPassword" class="text-danger">
+                    {{labelPassword}}
+                  </span>
+                </div>
+                <div class="mb-4 d-flex justify-content-between">
+                  <label class="text-secondary h5 m-0">
+                    Accept Security Policies
+                    <input
+                      v-model="policies"
+                      type="checkbox"
+                      placeholder="johndoe"
+                    />
+                  </label>
+                  <p class="text-secondary h5 m-0">Forgout Password?</p>
+                </div>
+                <span v-show="labelPolicies" class="text-danger d-block mb-3">
+                  {{labelPolicies}}
+                </span>
+                <div class="mb-4 d-flex justify-content-center">
+                  <button class="btn btn-green w-75" type="submit">
+                    Sing In
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

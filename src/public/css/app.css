@@ -1,0 +1,40 @@
+body {
+  background: #28a8b1;
+  background: #24c6dc;
+  background: -webkit-linear-gradient(to bottom, #28a8b1, #18696e);
+  background: linear-gradient(to bottom, #28a8b1, #18696e);
+  background-repeat: no-repeat;
+  padding-bottom: 1.25em;
+}
+
+#app {
+  height: inherit;
+}
+
+.panel-login {
+  display: grid;
+  background-color: #fff;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-columns: repeat(minmax(800px, 900px));
+  width: 75%;
+  min-height: 50rem;
+  max-height: 75rem;
+}
+
+.panel-login__left {
+  background: #3f3891;
+}
+
+.text-green {
+  color: #28a8b1;
+}
+.btn-green {
+  background-color: #28a8b1;
+  color: #fff;
+}
+
+@media screen and (min-height: 1000px) {
+  body {
+    min-height: 100vh;
+  }
+}
