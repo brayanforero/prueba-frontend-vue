@@ -1,4 +1,4 @@
-# Prueba Frontend
+# Pratica Formulario con Vue JS
 ## Archivos
 Los archivos de la prueba se encuentra en el **src/public**
 - index.html.
