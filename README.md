@@ -2,8 +2,7 @@
 ## Archivos
 Los archivos de la prueba se encuentra en el **src/public**
 - index.html.
-- grilla.htmll.
-- formulario de pasos.
+- grilla.html.
 ## Pasos para abrir las pruebas
 1. Abre la carpeta con la linea de comandos.
 2. Instalar las dependencias con **npm i o yarn**
